@@ -91,6 +91,7 @@ group :development do
   gem "grade_runner"
   gem "pry-rails"
   gem "rails_db"
+  gem "rails_live_reload"
   gem "rails-erd"
   gem "rufo"
   gem "specs_to_readme"
