@@ -9,4 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Restaurant < ApplicationRecord
+
+  has_many :users
 end
