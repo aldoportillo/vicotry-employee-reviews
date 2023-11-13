@@ -1,14 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="d-flex justify-content-between align-items-center"">
 <h1>Restaurants</h1>
-
-<div id="restaurants">
-  <% @restaurants.each do |restaurant| %>
-    <%= render restaurant %>
-    <p>
-      <%= link_to "Show this restaurant", restaurant %>
-    </p>
-  <% end %>
+<%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary" %>
 </div>
+<div id="restaurants">
 
-<%= link_to "New restaurant", new_restaurant_path %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <th scope="row"><%= restaurant.name %></th>
+          <td><%= restaurant.location %></td>
+          <td><%= link_to "Show this restaurant", restaurant %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
