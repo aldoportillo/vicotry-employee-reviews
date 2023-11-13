@@ -11,4 +11,6 @@
 class Restaurant < ApplicationRecord
 
   has_many :users
+
+  has_many :posts, class_name: "Post", foreign_key: "restaurant_id"
 end

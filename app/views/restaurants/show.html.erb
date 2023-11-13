@@ -2,6 +2,42 @@
 
 <%= render @restaurant %>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">content</th>
+      <th scope="col">posted</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @restaurant.posts.each do |post|  %>
+    <tr>
+      <th scope="row"><%= post.content %></th>
+      <td><%= post.created_at.strftime("%r %D") %></td>
+      
+    </tr>
+<% end %>
+</tbody>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">employee</th>
+      <th scope="col">email</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @restaurant.users.each do |user|  %>
+    <tr>
+      <th scope="row"><%= user.name %></th>
+      <th scope="row"><%= user.email %></th>
+    </tr>
+<% end %>
+</tbody>
+</table>
+
+
 <div>
   <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
   <%= link_to "Back to restaurants", restaurants_path %>
