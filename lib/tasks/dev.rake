@@ -1,5 +1,5 @@
 desc "Fill the database tables with some sample data"
-task({ :populate_restaurants => :environment }) do
+task({ :populate_restaurants => :development }) do
 
   pp "Populating Restaurants"
   Restaurant.create(
@@ -17,6 +17,12 @@ task({ :populate_restaurants => :environment }) do
   Restaurant.create(
     name: "Victory Steak & Seafood",
     location: "Elmhurst",
+  )
+  User.create(
+    name: "tom",
+    email: "tom@example.com",
+    admin: true,
+    password: "password"
   )
   pp "There are now #{Restaurant.count} restaurants"
 end
