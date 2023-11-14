@@ -4,24 +4,53 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+    <div class="form-group">
+      <%= f.label :email, "Email"%>
+      <%= f.text_field :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :restaurant_id,
+                input_html: { autocomplete: "email" },
+                class: "form-control"%>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, "Name"%>
+
+      <%= f.text_field :name,
+    
                 required: true,
-                input_html: { autocomplete: "restaurant_id" } %>
-    <%= f.input :password,
+                input_html: { autocomplete: "name" },
+                class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :restaurant_id, "Restaurant"%>
+
+      <%= f.text_field :restaurant_id,
+    
+                required: true,
+                input_html: { autocomplete: "restaurant_id" },
+                class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password, "Password"%>
+      <%= f.text_field :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                input_html: { autocomplete: "new-password" },
+                class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm Password"%>
+      <%= f.text_field :password_confirmation,
+    
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password" },
+                class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-primary"%>
   </div>
 <% end %>
 
