@@ -25,6 +25,12 @@
 <h3>Take the First Step:</h3>
 <p>Click below to share your anonymous feedback. Together, we can make Victory Restaurants an even better place to work.</p>
 
+<% if current_user %>
 <form action="/posts/new">
   <button class="btn btn-primary">Submit Feedback</button>
 </form>
+<% else %>
+<form action="/users/sign_up">
+  <button class="btn btn-primary">Sign Up</button>
+</form>
+<% end %>
