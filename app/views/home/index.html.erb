@@ -1,1 +1,38 @@
-<h2>Hello world</h2>
+<p style="color: green"><%= notice %></p>
+
+<h2>Welcome to Victory Restaurants - Employee Feedback Portal</h2>
+
+<p>At Victory Restaurants, we are dedicated to creating not just an extraordinary dining experience for our guests, but also an exceptional work environment for our team. We understand the importance of every voice and are committed to ensuring that each member of our staff feels heard, valued, and respected.</p>
+
+<h3>Your Voice Matters:</h3>
+
+<p>This platform is an anonymous way for you to share your experiences, thoughts, and suggestions about your workplace. Whether it's feedback about the work environment, suggestions for improvement, or sharing what we are doing right, your insights are invaluable in helping us grow and improve.</p>
+
+<h3>How It Works:</h3>
+
+<ol>
+  <li><b>Share Anonymously:</b> Your identity will remain confidential. Feel free to express yourself openly.</li>
+  <li><b>Respect and Honesty:</b> While we encourage frankness, we also uphold a culture of respect. Please share your thoughts constructively.</li>
+  <li><b>Review and Action:</b>Our dedicated team will review all comments. We are committed to taking action where necessary and celebrating our successes.</li>
+</ol>
+
+<h3>Why Your Feedback Is Important:</h3>
+
+<ul>
+  <li><b>Improvement: </b>Your feedback helps us identify areas where we can do better.</li>
+  <li><b>Recognition: Recognition: </b>It allows us to recognize and reinforce the positive aspects of our work environment.</li>
+  <li><b>Community: </b>You are part of the Victory family, and your voice plays a crucial role in our community's health and growth.</li>
+</ul>
+
+<h3>Take the First Step:</h3>
+<p>Click below to share your anonymous feedback. Together, we can make Victory Restaurants an even better place to work.</p>
+
+<% if current_user %>
+<form action="/posts/new">
+  <button class="btn btn-primary">Submit Feedback</button>
+</form>
+<% else %>
+<form action="/users/sign_up">
+  <button class="btn btn-primary">Sign Up</button>
+</form>
+<% end %>
