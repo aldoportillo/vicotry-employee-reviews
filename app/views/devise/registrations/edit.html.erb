@@ -29,13 +29,9 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :restaurant_id, "Restaurant"%>
-
-      <%= f.text_field :restaurant_id,
-    
-                required: true,
-                input_html: { autocomplete: "restaurant_id" },
-                class: "form-control" %>
+      <%= f.label :restaurant_id, "Choose a Restaurant" %>
+      <%= f.select :restaurant_id, 
+      Restaurant.all.order(:name).map { |restaurant| ["#{restaurant.name} - #{restaurant.location}", restaurant.id] }, { prompt: "Select Restaurant" }, class: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.label :password, "Password"%>
