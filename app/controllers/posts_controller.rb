@@ -19,6 +19,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    if current_user.id != @post.user_id
+      redirect_to root_path, alert: "You are not authorized to view this page."
+    end
   end
 
   # POST /posts or /posts.json
