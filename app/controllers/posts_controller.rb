@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :ensure_user_is_authorized, only: [:show]
 
   # GET /posts or /posts.json
   def index
-      @posts = Post.all
+      # @posts = Post.all
+      @posts = policy_scope(Post)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -66,5 +68,11 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:user_id, :restaurant_id, :content)
+    end
+
+    def ensure_user_is_authorized
+      if !PostPolicy.new(current_user, @post).show?
+        raise Pundit::NotAuthorizedError, "not allowed"
+      end
     end
 end
