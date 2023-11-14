@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 gem "pundit"
 
+gem 'simple_form'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -110,3 +112,9 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.13"
+
+gem "sentry-rails", "~> 5.13"

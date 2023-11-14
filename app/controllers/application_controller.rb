@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   skip_forgery_protection
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  include Pundit
+  include Pundit::Authorization
 
   private
     def user_not_authorized

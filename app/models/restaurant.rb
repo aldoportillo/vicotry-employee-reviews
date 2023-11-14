@@ -2,7 +2,7 @@
 #
 # Table name: restaurants
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  location   :string
 #  name       :string
 #  created_at :datetime         not null
