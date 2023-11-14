@@ -1,4 +1,4 @@
-class PostPolicy < ApplicationPolicy
+class RestaurantPolicy < ApplicationPolicy
   class Scope
     attr_reader :user, :scope
 
@@ -11,8 +11,9 @@ class PostPolicy < ApplicationPolicy
       if user.admin?
         scope.all
       else
-        scope.where(user: user)
+        scope.none
       end
     end
   end
+
 end
